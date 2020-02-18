@@ -10,7 +10,9 @@ import ru.xunto.fair_currency.items.ItemCoin;
 public class FairCurrencyMod {
     public static final String MODID = "@@MODID@@";
     public static final String VERSION = "@@VERSION@@";
+
     public static final ItemCoin goldCoin = new ItemCoin("gold_coin");
+
     public static CreativeTabs tab = new CreativeTabs("Fair Currency") {
         @Override
         public net.minecraft.item.Item getTabIconItem() {
