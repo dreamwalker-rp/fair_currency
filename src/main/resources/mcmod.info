@@ -1,0 +1,19 @@
+[
+  {
+    "modid": "@@MODID@@",
+    "name": "Fair Currency Mod",
+    "description": "Adds currency from dnd world.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "xunto",
+      "Sargar"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
