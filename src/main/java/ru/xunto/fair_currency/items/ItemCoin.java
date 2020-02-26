@@ -1,6 +1,5 @@
 package ru.xunto.fair_currency.items;
 
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -11,12 +10,9 @@ public class ItemCoin extends Item {
     private Item currentCurrency;
     private Item hightCurrency = null;
 
-    int lessStep = 1;
-    int hightStep = 10;
-
     public ItemCoin(String registryName) {
         super(registryName, FairCurrencyMod.tab);
-        this.setTextureName(FairCurrencyMod.MODID+":"+registryName);
+        this.setTextureName(FairCurrencyMod.MODID + ":" + registryName);
         this.currentCurrency = this;
     }
 
@@ -25,17 +21,17 @@ public class ItemCoin extends Item {
         return super.getUnlocalizedName(stack) + stack.getItemDamage();
     }
 
-    public ItemStack onItemRightClick(ItemStack item, World world, EntityPlayer player){
-        if (item.stackSize >= 10){
+    public ItemStack onItemRightClick(ItemStack item, World world, EntityPlayer player) {
+        if (item.stackSize >= 10) {
             this.getHightCurrency(item, world, player);
-        }else {
+        } else {
             this.getLessCurrency(item, world, player);
         }
         return item;
     }
 
-    private void getLessCurrency (ItemStack item, World world, EntityPlayer player){
-        if (lessCurrency == null){
+    private void getLessCurrency(ItemStack item, World world, EntityPlayer player) {
+        if (lessCurrency == null) {
             return;
         }
         ItemStack itemStack = new ItemStack(lessCurrency);
@@ -46,8 +42,8 @@ public class ItemCoin extends Item {
         player.inventory.setInventorySlotContents(player.inventory.currentItem, newItemStack);
     }
 
-    private void getHightCurrency (ItemStack item, World world, EntityPlayer player){
-        if (hightCurrency == null){
+    private void getHightCurrency(ItemStack item, World world, EntityPlayer player) {
+        if (hightCurrency == null) {
             return;
         }
         ItemStack itemStack = new ItemStack(hightCurrency);

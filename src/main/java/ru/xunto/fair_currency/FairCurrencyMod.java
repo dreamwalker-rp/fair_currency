@@ -11,10 +11,10 @@ public class FairCurrencyMod {
     public static final String MODID = "@@MODID@@";
     public static final String VERSION = "@@VERSION@@";
 
-    public static final ItemCoin1Gold goldCoin1gold = new ItemCoin1Gold("1_gold_coin");
-    public static final ItemCoin10Gold goldCoin10gold = new ItemCoin10Gold("10_gold_coin");
-    public static final ItemCoin100Gold goldCoin100gold = new ItemCoin100Gold("100_gold_coin");
-    public static final ItemCoin1000Gold goldCoin1000gold = new ItemCoin1000Gold("1000_gold_coin");
+    public static final ItemCoin goldCoin1gold = new ItemCoin("1_gold_coin");
+    public static final ItemCoin goldCoin10gold = new ItemCoin("10_gold_coin");
+    public static final ItemCoin goldCoin100gold = new ItemCoin("100_gold_coin");
+    public static final ItemCoin goldCoin1000gold = new ItemCoin("1000_gold_coin");
 
     public static CreativeTabs tab = new CreativeTabs("Fair Currency") {
         @Override
