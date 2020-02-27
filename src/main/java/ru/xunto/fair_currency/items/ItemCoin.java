@@ -7,74 +7,45 @@ import ru.xunto.fair_currency.FairCurrencyMod;
 
 public class ItemCoin extends Item {
     private Item lessCurrency = null;
-    private Item currentCurrency;
-    private Item hightCurrency = null;
+    private Item higherCurrency = null;
 
     public ItemCoin(String registryName) {
         super(registryName, FairCurrencyMod.tab);
         this.setTextureName(FairCurrencyMod.MODID + ":" + registryName);
-        this.currentCurrency = this;
-    }
-
-    @Override
-    public String getUnlocalizedName(ItemStack stack) {
-        return super.getUnlocalizedName(stack) + stack.getItemDamage();
     }
 
     public ItemStack onItemRightClick(ItemStack item, World world, EntityPlayer player) {
-        if (item.stackSize >= 10) {
-            this.getHightCurrency(item, world, player);
-        } else {
-            this.getLessCurrency(item, world, player);
-        }
+        if (item.stackSize >= 10) this.getHigherCurrency(item, world, player);
+        else this.getLessCurrency(item, world, player);
+
         return item;
     }
 
     private void getLessCurrency(ItemStack item, World world, EntityPlayer player) {
-        if (lessCurrency == null) {
-            return;
-        }
-        ItemStack itemStack = new ItemStack(lessCurrency);
-        itemStack.stackSize = 10;
+        if (lessCurrency == null) return;
+
+        ItemStack itemStack = new ItemStack(lessCurrency, 10);
         player.inventory.addItemStackToInventory(itemStack);
-        ItemStack newItemStack = new ItemStack(this);
-        newItemStack.stackSize = item.stackSize - 1;
+
+        ItemStack newItemStack = new ItemStack(this, item.stackSize - 1);
         player.inventory.setInventorySlotContents(player.inventory.currentItem, newItemStack);
     }
 
-    private void getHightCurrency(ItemStack item, World world, EntityPlayer player) {
-        if (hightCurrency == null) {
-            return;
-        }
-        ItemStack itemStack = new ItemStack(hightCurrency);
-        player.inventory.addItemStackToInventory(itemStack);
-        ItemStack newItemStack = new ItemStack(this);
-        newItemStack.stackSize = item.stackSize - 10;
-        player.inventory.setInventorySlotContents(player.inventory.currentItem, newItemStack);
-    }
+    private void getHigherCurrency(ItemStack item, World world, EntityPlayer player) {
+        if (higherCurrency == null) return;
 
-    public Item getLessCurrency() {
-        return lessCurrency;
+        ItemStack itemStack = new ItemStack(higherCurrency);
+        player.inventory.addItemStackToInventory(itemStack);
+
+        ItemStack newItemStack = new ItemStack(this, item.stackSize - 10);
+        player.inventory.setInventorySlotContents(player.inventory.currentItem, newItemStack);
     }
 
     public void setLessCurrency(Item lessCurrency) {
         this.lessCurrency = lessCurrency;
     }
 
-    public Item getCurrentCurrency() {
-        return currentCurrency;
+    public void setHigherCurrency(Item higherCurrency) {
+        this.higherCurrency = higherCurrency;
     }
-
-    public void setCurrentCurrency(Item currentCurrency) {
-        this.currentCurrency = currentCurrency;
-    }
-
-    public Item getHightCurrency() {
-        return hightCurrency;
-    }
-
-    public void setHightCurrency(Item hightCurrency) {
-        this.hightCurrency = hightCurrency;
-    }
-
 }

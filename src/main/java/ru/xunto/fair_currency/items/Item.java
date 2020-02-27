@@ -9,7 +9,6 @@ public class Item extends net.minecraft.item.Item {
     public Item(String registryName, CreativeTabs tab) {
         this.registryName = registryName;
         this.setUnlocalizedName(registryName);
-        //this.setCreativeTab(tab);
     }
 
     public void register() {
