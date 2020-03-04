@@ -11,7 +11,6 @@ public class ItemCoin extends Item {
 
     public ItemCoin(String registryName) {
         super(registryName, FairCurrencyMod.tab);
-        this.setTextureName(FairCurrencyMod.MODID + ":" + registryName);
     }
 
     public ItemStack onItemRightClick(ItemStack item, World world, EntityPlayer player) {

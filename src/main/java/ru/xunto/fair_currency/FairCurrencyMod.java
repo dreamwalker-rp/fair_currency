@@ -4,7 +4,8 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import net.minecraft.creativetab.CreativeTabs;
-import ru.xunto.fair_currency.items.*;
+import ru.xunto.fair_currency.items.Item;
+import ru.xunto.fair_currency.items.ItemCoin;
 
 @Mod(modid = FairCurrencyMod.MODID, version = FairCurrencyMod.VERSION)
 public class FairCurrencyMod {
@@ -45,5 +46,26 @@ public class FairCurrencyMod {
         goldCoin10gold.setCreativeTab(tab);
         goldCoin100gold.setCreativeTab(tab);
         goldCoin1000gold.setCreativeTab(tab);
+
+        addNotNamedItems();
+    }
+
+    private void addNotNamedItems() {
+        String[] notNamedItem = getNotNamedFilesName();
+        for (String itemName : notNamedItem) {
+            addSimpleItems(itemName);
+        }
+    }
+
+    private Item addSimpleItems(String itemName) {
+        final Item newItem = new Item(itemName, FairCurrencyMod.tab);
+        newItem.register();
+        newItem.setCreativeTab(tab);
+        return newItem;
+    }
+
+    private String[] getNotNamedFilesName() {
+        NotNamedItemsWrapper notNamedItemsWrapper = new NotNamedItemsWrapper();
+        return notNamedItemsWrapper.getItemsName();
     }
 }
