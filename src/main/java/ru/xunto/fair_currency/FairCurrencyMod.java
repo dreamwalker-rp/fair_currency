@@ -3,7 +3,10 @@ package ru.xunto.fair_currency;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import ru.xunto.fair_currency.blocks.BaseBlock;
+import ru.xunto.fair_currency.blocks.NonCollisionBlock;
 import ru.xunto.fair_currency.items.Item;
 import ru.xunto.fair_currency.items.ItemCoin;
 
@@ -48,6 +51,7 @@ public class FairCurrencyMod {
         goldCoin1000gold.setCreativeTab(tab);
 
         addNotNamedItems();
+        addBlocks();
     }
 
     private void addNotNamedItems() {
@@ -68,4 +72,33 @@ public class FairCurrencyMod {
         NotNamedItemsWrapper notNamedItemsWrapper = new NotNamedItemsWrapper();
         return notNamedItemsWrapper.getItemsName();
     }
+
+    private void addBlocks() {
+        BaseBlock lantern_1 = createNonCollisionBlock("lantern_1", Material.plants, 1, 0.0F)
+                .setLightLevel(1.0F).setOpaqueCube(false);
+        lantern_1.setBlockBounds(0.25f, 0, 0.25f, 0.75f, 0.75f, 0.75f);
+        registerBlock(lantern_1);
+    }
+
+    private BaseBlock createBlock(String blockName, Material material, int rendererType, float hardness) {
+        BaseBlock baseBlock = new BaseBlock(blockName, tab, material)
+                .setRenderType(rendererType)
+                .setHardness(hardness);
+        return baseBlock;
+    }
+
+    private BaseBlock createNonCollisionBlock(String blockName, Material material, int rendererType, float hardness) {
+        BaseBlock baseBlock = new NonCollisionBlock(blockName, tab, material)
+                .setRenderType(rendererType)
+                .setHardness(hardness);
+        return baseBlock;
+    }
+
+
+    private BaseBlock registerBlock(BaseBlock baseBlock) {
+        baseBlock.register();
+        baseBlock.setCreativeTab(tab);
+        return baseBlock;
+    }
+
 }

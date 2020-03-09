@@ -3,3 +3,4 @@ item.10_gold_coin.name=10 gold coins
 item.100_gold_coin.name=100 gold coins
 item.1000_gold_coin.name=1000 gold coins
 itemGroup.Fair Currency=Fair Currency
+tile.lantern_1.name= Common lantern
