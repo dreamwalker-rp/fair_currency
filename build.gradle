@@ -20,7 +20,7 @@ plugins {
 
 apply plugin: 'forge'
 
-version = "1.1"
+version = "1.2"
 group = "ru.xunto.fair_currency"
 archivesBaseName = "fair_currency"
 
