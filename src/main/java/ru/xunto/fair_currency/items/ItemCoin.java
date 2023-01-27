@@ -40,7 +40,7 @@ public class ItemCoin extends Item {
         player.inventory.setInventorySlotContents(player.inventory.currentItem, newItemStack);
     }
 
-    public void setLessCurrency(Item lessCurrency) {
+    public void setLesserCurrency(Item lessCurrency) {
         this.lessCurrency = lessCurrency;
     }
 

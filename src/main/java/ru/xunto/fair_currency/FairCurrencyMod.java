@@ -31,13 +31,13 @@ public class FairCurrencyMod {
     public void init(FMLInitializationEvent event) {
         goldCoin1gold.setHigherCurrency(goldCoin10gold);
 
-        goldCoin10gold.setLessCurrency(goldCoin1gold);
+        goldCoin10gold.setLesserCurrency(goldCoin1gold);
         goldCoin10gold.setHigherCurrency(goldCoin100gold);
 
-        goldCoin100gold.setLessCurrency(goldCoin10gold);
+        goldCoin100gold.setLesserCurrency(goldCoin10gold);
         goldCoin100gold.setHigherCurrency(goldCoin1000gold);
 
-        goldCoin1000gold.setLessCurrency(goldCoin100gold);
+        goldCoin1000gold.setLesserCurrency(goldCoin100gold);
 
         goldCoin1gold.register();
         goldCoin10gold.register();
