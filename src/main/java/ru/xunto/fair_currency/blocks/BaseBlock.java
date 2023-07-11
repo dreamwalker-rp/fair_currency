@@ -4,6 +4,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import ru.xunto.fair_currency.FairCurrencyMod;
+import ru.xunto.fair_currency.init.BlockInit;
 
 public class BaseBlock extends net.minecraft.block.Block {
     private String registryName;
@@ -16,7 +17,8 @@ public class BaseBlock extends net.minecraft.block.Block {
         this.registryName = registryName;
         this.setBlockName(registryName);
         this.setBlockTextureName(FairCurrencyMod.MODID + ":" + registryName);
-        //this.canCollideCheck()
+        setCreativeTab(FairCurrencyMod.TAB);
+        BlockInit.BLOCKS.add(this);
     }
 
     public void register() {
