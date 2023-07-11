@@ -24,14 +24,9 @@ public class FairCurrencyMod {
     public void init(FMLInitializationEvent event) {
         BlockInit blockInit = new BlockInit();
         ItemInit itemInit = new ItemInit();
-        itemInit.addNotNamedItems();
-        blockInit.addBlocks();
+        itemInit.registerAll();
+        blockInit.registerAll();
+
+
     }
-
-
-
-
-
-
-
 }

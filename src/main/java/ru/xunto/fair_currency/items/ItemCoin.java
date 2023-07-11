@@ -5,9 +5,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import ru.xunto.fair_currency.FairCurrencyMod;
 
-public class ItemCoin extends Item {
-    private Item lessCurrency = null;
-    private Item higherCurrency = null;
+public class ItemCoin extends BaseItem {
+    private BaseItem lessCurrency = null;
+    private BaseItem higherCurrency = null;
 
     public ItemCoin(String registryName) {
         super(registryName, FairCurrencyMod.TAB);
@@ -40,11 +40,11 @@ public class ItemCoin extends Item {
         player.inventory.setInventorySlotContents(player.inventory.currentItem, newItemStack);
     }
 
-    public void setLesserCurrency(Item lessCurrency) {
+    public void setLesserCurrency(BaseItem lessCurrency) {
         this.lessCurrency = lessCurrency;
     }
 
-    public void setHigherCurrency(Item higherCurrency) {
+    public void setHigherCurrency(BaseItem higherCurrency) {
         this.higherCurrency = higherCurrency;
     }
 }
