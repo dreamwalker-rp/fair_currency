@@ -35,7 +35,13 @@ public class BlockInit {
                 .setLightLevel(1.0F).setOpaqueCube(false);
         lantern_1.setBlockBounds(0.25f, 0, 0.25f, 0.75f, 0.75f, 0.75f);
 
-        EachSideTextureBlock testBlock = new EachSideTextureBlock("test", Material.rock);
+        CreateEachSideBlocks();
+    }
+
+    public void CreateEachSideBlocks(){
+        for (int i = 0; i < 50; i++) {
+            new EachSideTextureBlock("sides_block_"+i, Material.rock);
+        }
     }
 
     public void registerAll(){
