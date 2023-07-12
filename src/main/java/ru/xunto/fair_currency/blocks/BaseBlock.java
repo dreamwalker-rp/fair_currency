@@ -1,18 +1,19 @@
 package ru.xunto.fair_currency.blocks;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import ru.xunto.fair_currency.FairCurrencyMod;
 import ru.xunto.fair_currency.init.BlockInit;
 
-public class BaseBlock extends net.minecraft.block.Block {
+public class BaseBlock extends Block {
     private String registryName;
     private int renderType = 0;
     private boolean opaqueCube = false;
     private boolean isCollideble = true;
 
-    public BaseBlock(String registryName, CreativeTabs tab, Material material) {
+    public BaseBlock(String registryName, Material material) {
         super(material);
         this.registryName = registryName;
         this.setBlockName(registryName);

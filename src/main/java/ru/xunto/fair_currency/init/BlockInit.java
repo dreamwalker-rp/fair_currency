@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import ru.xunto.fair_currency.FairCurrencyMod;
 import ru.xunto.fair_currency.blocks.BaseBlock;
+import ru.xunto.fair_currency.blocks.EachSideTextureBlock;
 import ru.xunto.fair_currency.blocks.NonCollisionBlock;
 
 import java.util.ArrayList;
@@ -16,14 +17,14 @@ public class BlockInit {
         addBlocks();
     }
     public BaseBlock createBlock(String blockName, Material material, int rendererType, float hardness) {
-        BaseBlock baseBlock = new BaseBlock(blockName, FairCurrencyMod.TAB, material)
+        BaseBlock baseBlock = new BaseBlock(blockName, material)
                 .setRenderType(rendererType)
                 .setHardness(hardness);
         return baseBlock;
     }
 
     public BaseBlock createNonCollisionBlock(String blockName, Material material, int rendererType, float hardness) {
-        BaseBlock baseBlock = new NonCollisionBlock(blockName, FairCurrencyMod.TAB, material)
+        BaseBlock baseBlock = new NonCollisionBlock(blockName, material)
                 .setRenderType(rendererType)
                 .setHardness(hardness);
         return baseBlock;
@@ -33,6 +34,8 @@ public class BlockInit {
         BaseBlock lantern_1 = createNonCollisionBlock("lantern_1", Material.plants, 1, 0.0F)
                 .setLightLevel(1.0F).setOpaqueCube(false);
         lantern_1.setBlockBounds(0.25f, 0, 0.25f, 0.75f, 0.75f, 0.75f);
+
+        EachSideTextureBlock testBlock = new EachSideTextureBlock("test", Material.rock);
     }
 
     public void registerAll(){

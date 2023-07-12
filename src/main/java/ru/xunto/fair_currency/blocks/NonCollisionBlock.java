@@ -7,8 +7,8 @@ import net.minecraft.world.World;
 
 public class NonCollisionBlock extends BaseBlock {
 
-    public NonCollisionBlock(String registryName, CreativeTabs tab, Material material) {
-        super(registryName, tab, material);
+    public NonCollisionBlock(String registryName, Material material) {
+        super(registryName, material);
         this.setBlockBounds(0.25f, 0.25f, 0.25f,
                 0.75f, 0.75f, 0.75f);
     }

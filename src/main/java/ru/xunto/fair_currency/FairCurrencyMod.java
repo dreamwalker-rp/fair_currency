@@ -26,7 +26,5 @@ public class FairCurrencyMod {
         ItemInit itemInit = new ItemInit();
         itemInit.registerAll();
         blockInit.registerAll();
-
-
     }
 }
