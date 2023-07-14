@@ -44,3 +44,5 @@ processResources {
         expand 'version': project.version, 'mcversion': project.minecraft.version, 'modid': archivesBaseName
     }
 }
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8

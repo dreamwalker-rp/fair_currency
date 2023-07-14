@@ -1,0 +1,16 @@
+{
+  "blocks": {
+      "cross_block_1": {
+        "passable": true,
+        "light_source": true,
+        "hardness": 1
+      },
+      "sides_block_1": {
+        "passable": false,
+        "light_source": true,
+        "hardness": 1
+      }
+    },
+  "items": [
+  ]
+}

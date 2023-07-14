@@ -3,19 +3,25 @@ package ru.xunto.fair_currency.blocks;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.world.World;
 import ru.xunto.fair_currency.FairCurrencyMod;
 import ru.xunto.fair_currency.init.BlockInit;
+
+import java.util.List;
 
 public class BaseBlock extends Block {
     private String registryName;
     private int renderType = 0;
     private boolean opaqueCube = false;
-    private boolean isCollideble = true;
+    private boolean passable = false;
+    private String blockConfigName;
 
     public BaseBlock(String registryName, Material material) {
         super(material);
         this.registryName = registryName;
+        this.blockConfigName = registryName;
         this.setBlockName(registryName);
         this.setBlockTextureName(FairCurrencyMod.MODID + ":" + registryName);
         setCreativeTab(FairCurrencyMod.TAB);
@@ -57,13 +63,22 @@ public class BaseBlock extends Block {
         return this;
     }
 
-    public BaseBlock setCollideble(boolean collideble) {
-        this.isCollideble = collideble;
+    public BaseBlock setPassable(boolean passable) {
+        this.passable = passable;
+        //this.setOpaqueCube(false);
         return this;
     }
 
+    public String getBlockConfigName() {
+        return blockConfigName;
+    }
+
     @Override
-    public boolean isCollidable() {
-        return this.isCollideble;
+    public void addCollisionBoxesToList(World p_149743_1_, int p_149743_2_, int p_149743_3_, int p_149743_4_, AxisAlignedBB p_149743_5_, List p_149743_6_, Entity p_149743_7_) {
+        if (passable) {
+            return;
+        }
+        super.addCollisionBoxesToList(p_149743_1_, p_149743_2_, p_149743_3_, p_149743_4_, p_149743_5_, p_149743_6_, p_149743_7_);
+
     }
 }
