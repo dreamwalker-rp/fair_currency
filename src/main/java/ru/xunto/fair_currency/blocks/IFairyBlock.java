@@ -63,8 +63,8 @@ public interface IFairyBlock {
 
     public BlockParams getParams();
 
-    public default void setLightLevel(float lightLevel) {
-        getParams().setCustomLightLevel(lightLevel);
+    public default Block setLightLevel(float lightLevel) {
+        return getParams().setCustomLightLevel(lightLevel);
     }
 
     public default float getCustomHardness() {

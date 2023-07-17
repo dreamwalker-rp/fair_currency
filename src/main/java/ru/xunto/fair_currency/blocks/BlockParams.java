@@ -51,9 +51,10 @@ public class BlockParams {
         return lightLevel;
     }
 
-    public void setCustomLightLevel(float lightLevel) {
+    public Block setCustomLightLevel(float lightLevel) {
         this.lightLevel = lightLevel;
         block.setLightLevel(lightLevel);
+        return block;
     }
 
     public float getCustomHardness() {
