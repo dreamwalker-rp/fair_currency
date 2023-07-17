@@ -9,26 +9,27 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class BaseBlock extends Block implements IFairyBlock {
-    BlockParams blockParams = new BlockParams();
+    BlockParams blockParams;
 
     public BaseBlock(String registryName, Material material) {
         super(material);
         fairyblockInit(registryName, this);
-        BlockParams blocksParams = new BlockParams();
     }
-//
-//    @Override
-//    public BaseBlock setLightLevel(float lightLevel) {
-//        super.setLightLevel(getParams().getCustomLightLevel());
-//        return this;
-//    }
 
     public int getRenderType() {
         return getCustomRenderType();
     }
 
     @Override
+    public boolean isOpaqueCube()
+    {
+        return getParams().getCustomOpaqueCube();
+    }
+    @Override
     public BlockParams getParams() {
+        if (blockParams == null){
+            blockParams = new BlockParams();
+        }
         return blockParams;
     }
 
