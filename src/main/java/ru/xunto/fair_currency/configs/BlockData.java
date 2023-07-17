@@ -4,6 +4,7 @@ public class BlockData {
     private boolean passable;
     private boolean light_source;
     private float hardness;
+    private boolean opaqueCube;
 
     public boolean isPassable() {
         return passable;
@@ -27,5 +28,13 @@ public class BlockData {
 
     public void setHardness(float hardness) {
         this.hardness = hardness;
+    }
+
+    public boolean isOpaqueCube() {
+        return opaqueCube;
+    }
+
+    public void setOpaqueCube(boolean opaqueCube) {
+        this.opaqueCube = opaqueCube;
     }
 }

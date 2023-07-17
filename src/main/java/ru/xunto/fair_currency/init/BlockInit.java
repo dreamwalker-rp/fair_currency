@@ -1,5 +1,6 @@
 package ru.xunto.fair_currency.init;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import ru.xunto.fair_currency.blocks.*;
 import ru.xunto.fair_currency.configs.BlockData;
@@ -11,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class BlockInit {
-    public static List<BaseBlock> BLOCKS = new ArrayList<BaseBlock>();
+    public static List<IFairyBlock> BLOCKS = new ArrayList<>();
     private ConfigParser configParser = new ConfigParser();
 
     public BlockInit() {
@@ -20,22 +21,23 @@ public class BlockInit {
     }
 
     public BaseBlock createBlock(String blockName, Material material, int rendererType, float hardness) {
-        BaseBlock baseBlock = new BaseBlock(blockName, material)
-                .setRenderType(rendererType)
-                .setHardness(hardness);
+        BaseBlock baseBlock = new BaseBlock(blockName, material);
+        baseBlock.setRenderType(rendererType);
+        baseBlock.setHardness(hardness);
         return baseBlock;
     }
 
     public BaseBlock createNonCollisionBlock(String blockName, Material material, int rendererType, float hardness) {
-        BaseBlock baseBlock = new NonCollisionBlock(blockName, material)
-                .setRenderType(rendererType)
-                .setHardness(hardness);
+        BaseBlock baseBlock = new NonCollisionBlock(blockName, material);
+        baseBlock.setRenderType(rendererType);
+        baseBlock.setHardness(hardness);
         return baseBlock;
     }
 
     public void addBlocks() {
-        BaseBlock lantern_1 = createNonCollisionBlock("lantern_1", Material.plants, 1, 0.0F)
-                .setLightLevel(1.0F).setOpaqueCube(false);
+        BaseBlock lantern_1 = createNonCollisionBlock("lantern_1", Material.plants, 1, 0.0F);
+        lantern_1.setLightLevel(1.0F);
+        lantern_1.setOpaqueCube(false);
         lantern_1.setBlockBounds(0.25f, 0, 0.25f, 0.75f, 0.75f, 0.75f);
 
         createEachSideBlocks();
@@ -62,25 +64,27 @@ public class BlockInit {
     }
 
     public void registerAll() {
-        for (BaseBlock block : BLOCKS) {
-            block.register();
+        for (IFairyBlock block : BLOCKS) {
+            String test = block.getRegistryName();
+            block.register(test);
         }
     }
 
     private void ApplyConfigToBlocks() {
         EntityToLoad entityToLoad = configParser.getEntityToLoad();
         HashMap<String, BlockData> blocksData = entityToLoad.getBlocks();
-        for (BaseBlock block : BLOCKS) {
-            String blockName = block.getBlockConfigName();
-            if (blocksData.containsKey(blockName)){
+        for (IFairyBlock fairyBlock : BLOCKS) {
+            String blockName = fairyBlock.getRegistryName();
+            if (blocksData.containsKey(blockName)) {
                 BlockData data = blocksData.get(blockName);
-                if (data.isPassable()){
-                    block.setPassable(data.isPassable());
+                if (data.isPassable()) {
+                    fairyBlock.setPassable(data.isPassable());
                 }
-                if (data.isLightSource()){
-                    block.setLightLevel(1.0F);
+                if (data.isLightSource()) {
+                    fairyBlock.setLightLevel(1.0F);
                 }
-                block.setHardness(data.getHardness());
+                fairyBlock.setCustomHardness(data.getHardness());
+                fairyBlock.setOpaqueCube(data.isOpaqueCube());
             }
         }
     }
