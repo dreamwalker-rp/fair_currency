@@ -67,7 +67,7 @@ public class BlockInit {
     public void registerAll() {
         for (IFairyBlock block : BLOCKS) {
             String test = block.getRegistryName();
-            block.register(test);
+            block.register();
         }
     }
 

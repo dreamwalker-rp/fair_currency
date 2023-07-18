@@ -15,7 +15,7 @@ public interface IFairyBlock {
         BlockInit.BLOCKS.add(this);
     }
 
-    default void register(String test) {
+    default void register() {
         Block block = getBlock();
         String name = getRegistryName();
         GameRegistry.registerBlock(block, name);

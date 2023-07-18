@@ -14,7 +14,7 @@ public class ItemInit {
     public static final ItemCoin goldCoin10gold = new ItemCoin("10_gold_coin");
     public static final ItemCoin goldCoin100gold = new ItemCoin("100_gold_coin");
     public static final ItemCoin goldCoin1000gold = new ItemCoin("1000_gold_coin");
-    public static List<BaseItem> ITEMS = new ArrayList<BaseItem>();
+    public static List<BaseItem> ITEMS = new ArrayList<>();
 
     public ItemInit() {
         init();
