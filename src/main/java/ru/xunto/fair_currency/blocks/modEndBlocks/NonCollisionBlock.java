@@ -1,7 +1,6 @@
 package ru.xunto.fair_currency.blocks.modEndBlocks;
 
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 import ru.xunto.fair_currency.blocks.BaseBlock;

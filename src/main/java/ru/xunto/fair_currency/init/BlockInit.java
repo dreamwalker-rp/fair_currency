@@ -1,7 +1,8 @@
 package ru.xunto.fair_currency.init;
 
 import net.minecraft.block.material.Material;
-import ru.xunto.fair_currency.blocks.*;
+import ru.xunto.fair_currency.blocks.BaseBlock;
+import ru.xunto.fair_currency.blocks.IFairyBlock;
 import ru.xunto.fair_currency.blocks.modEndBlocks.*;
 import ru.xunto.fair_currency.configs.BlockData;
 import ru.xunto.fair_currency.configs.ConfigParser;
@@ -13,7 +14,7 @@ import java.util.List;
 
 public class BlockInit {
     public static List<IFairyBlock> BLOCKS = new ArrayList<>();
-    private ConfigParser configParser = new ConfigParser();
+    private final ConfigParser configParser = new ConfigParser();
 
     public BlockInit() {
         addBlocks();

@@ -3,6 +3,7 @@ package ru.xunto.fair_currency.blocks;
 import net.minecraft.block.Block;
 
 public class BlockParams {
+    Block block = null;
     private String registryName = null;
     private int renderType = 0;
     private boolean opaqueCube = false;
@@ -10,7 +11,6 @@ public class BlockParams {
     private float hardness = 1;
     private float lightLevel = 0;
     private boolean slowdown = false;
-    Block block = null;
 
     public boolean isSlowdown() {
         return slowdown;

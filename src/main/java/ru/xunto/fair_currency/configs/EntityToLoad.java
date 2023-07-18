@@ -10,7 +10,7 @@ public class EntityToLoad {
     private HashMap<String, BlockData> blocks;
     private Item[] items;
 
-    public EntityToLoad(HashMap<String, BlockData> Blocks, Item[] Items){
+    public EntityToLoad(HashMap<String, BlockData> Blocks, Item[] Items) {
         this.blocks = Blocks;
         this.items = Items;
     }

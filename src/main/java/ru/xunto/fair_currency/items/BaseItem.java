@@ -7,9 +7,9 @@ import ru.xunto.fair_currency.FairCurrencyMod;
 import ru.xunto.fair_currency.init.ItemInit;
 
 public class BaseItem extends Item {
-    private String registryName;
+    private final String registryName;
 
-    public BaseItem(String registryName, CreativeTabs tab) {
+    public BaseItem(String registryName) {
         this.registryName = registryName;
         this.setUnlocalizedName(registryName);
         this.setTextureName(FairCurrencyMod.MODID + ":" + registryName);
