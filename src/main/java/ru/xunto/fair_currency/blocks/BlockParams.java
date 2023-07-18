@@ -9,15 +9,15 @@ public class BlockParams {
     private boolean passable = false;
     private float hardness = 1;
     private float lightLevel = 0;
-    private boolean slowsdown = false;
+    private boolean slowdown = false;
     Block block = null;
 
-    public boolean isSlowsdown() {
-        return slowsdown;
+    public boolean isSlowdown() {
+        return slowdown;
     }
 
-    public void setSlowsdown(boolean slowsdown) {
-        this.slowsdown = slowsdown;
+    public void setSlowdown(boolean slowdown) {
+        this.slowdown = slowdown;
     }
 
     public String getRegistryName() {

@@ -74,4 +74,12 @@ public interface IFairyBlock {
     public default void setCustomHardness(float hardness) {
         getParams().setCustomHardness(hardness);
     }
+
+    public default boolean isSlowdown() {
+        return getParams().isSlowdown();
+    }
+
+    public default void setSlowdown(boolean isSlowdown) {
+        getParams().setSlowdown(isSlowdown);
+    }
 }

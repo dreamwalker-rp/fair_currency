@@ -1,8 +1,8 @@
 package ru.xunto.fair_currency.init;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import ru.xunto.fair_currency.blocks.*;
+import ru.xunto.fair_currency.blocks.modEndBlocks.*;
 import ru.xunto.fair_currency.configs.BlockData;
 import ru.xunto.fair_currency.configs.ConfigParser;
 import ru.xunto.fair_currency.configs.EntityToLoad;
@@ -18,13 +18,6 @@ public class BlockInit {
     public BlockInit() {
         addBlocks();
         ApplyConfigToBlocks();
-    }
-
-    public BaseBlock createBlock(String blockName, Material material, int rendererType, float hardness) {
-        BaseBlock baseBlock = new BaseBlock(blockName, material);
-        baseBlock.setRenderType(rendererType);
-        baseBlock.setHardness(hardness);
-        return baseBlock;
     }
 
     public BaseBlock createNonCollisionBlock(String blockName, Material material, int rendererType, float hardness) {
@@ -92,6 +85,7 @@ public class BlockInit {
                 }
                 fairyBlock.setCustomHardness(data.getHardness());
                 fairyBlock.setOpaqueCube(data.isOpaqueCube());
+                fairyBlock.setSlowdown(data.isSlowdown());
             }
         }
     }
