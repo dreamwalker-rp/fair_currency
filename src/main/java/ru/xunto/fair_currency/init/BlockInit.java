@@ -43,6 +43,7 @@ public class BlockInit {
         createEachSideBlocks();
         createCrossBlocks();
         createSmallCubeBlocks();
+        createSlabs();
     }
 
     public void createEachSideBlocks() {
@@ -60,6 +61,12 @@ public class BlockInit {
     public void createSmallCubeBlocks() {
         for (int i = 0; i < ConfigParser.EACH_SIDE_BLOCKS; i++) {
             new SmallCubeBlock("small_cube_" + i, Material.rock);
+        }
+    }
+
+    public void createSlabs() {
+        for (int i = 0; i < ConfigParser.EACH_SIDE_BLOCKS; i++) {
+            new FairySlabBlock("slab_" + i, false);
         }
     }
 

@@ -1,18 +1,27 @@
 {
   "blocks": {
-      "cross_block_1": {
-        "passable": true,
-        "light_source": true,
-        "hardness": 1,
-        "opaqueCube": false
-      },
-      "sides_block_1": {
-        "passable": false,
-        "light_source": true,
-        "hardness": 1,
-        "opaqueCube": false
-      }
+    "cross_block_1": {
+      "passable": true,
+      "light_source": true,
+      "hardness": 1,
+      "opaqueCube": false,
+      "slowsdown": true
     },
+    "sides_block_1": {
+      "passable": false,
+      "light_source": true,
+      "hardness": 1,
+      "opaqueCube": false,
+      "slowsdown": true
+    },
+    "slab_1": {
+      "passable": false,
+      "light_source": true,
+      "hardness": 1,
+      "opaqueCube": false,
+      "slowsdown": true
+    }
+  },
   "items": [
   ]
 }

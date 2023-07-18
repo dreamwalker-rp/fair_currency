@@ -9,7 +9,16 @@ public class BlockParams {
     private boolean passable = false;
     private float hardness = 1;
     private float lightLevel = 0;
+    private boolean slowsdown = false;
     Block block = null;
+
+    public boolean isSlowsdown() {
+        return slowsdown;
+    }
+
+    public void setSlowsdown(boolean slowsdown) {
+        this.slowsdown = slowsdown;
+    }
 
     public String getRegistryName() {
         return registryName;
@@ -27,9 +36,13 @@ public class BlockParams {
         this.renderType = renderType;
     }
 
-    public boolean getCustomOpaqueCube() {return opaqueCube; }
+    public boolean getCustomOpaqueCube() {
+        return opaqueCube;
+    }
 
-    public void setCustomOpaqueCube(boolean opaqueCube) { this.opaqueCube = opaqueCube;}
+    public void setCustomOpaqueCube(boolean opaqueCube) {
+        this.opaqueCube = opaqueCube;
+    }
 
     public boolean isPassable() {
         return passable;
