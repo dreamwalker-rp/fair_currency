@@ -3,7 +3,8 @@
     "sides": 2,
     "cross": 2,
     "smallCube": 2,
-    "slab": 2
+    "slab": 2,
+    "animated": 2
   },
   "blocks": {
     "cross_block_1": {

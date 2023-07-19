@@ -7,7 +7,7 @@ public enum BlockInitPrefixEnum {
     CROSS("cross_block_", 0, "cross"),
     SMALL_CUBE("small_cube_", 0, "smallCube"),
     SLAB("slab_", 0, "slab"),
-    ANIMATED("animated_", 0, "animated");
+    ANIMATED("animated_block_", 0, "animated");
 
     private String prefix;
     private int blockAmount;
