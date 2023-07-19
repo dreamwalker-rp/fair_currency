@@ -1,22 +1,28 @@
 {
+  "blocksAmount": {
+    "sides": 2,
+    "cross": 2,
+    "smallCube": 2,
+    "slab": 2
+  },
   "blocks": {
     "cross_block_1": {
       "passable": true,
-      "light_source": true,
+      "lightSource": true,
       "hardness": 1,
       "opaqueCube": false,
       "slowdown": true
     },
     "sides_block_1": {
       "passable": false,
-      "light_source": true,
+      "lightSource": true,
       "hardness": 1,
       "opaqueCube": false,
       "slowdown": true
     },
     "slab_1": {
       "passable": false,
-      "light_source": true,
+      "lightSource": true,
       "hardness": 1,
       "opaqueCube": false,
       "slowdown": true

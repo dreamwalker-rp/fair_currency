@@ -38,35 +38,46 @@ public class BlockInit {
         createCrossBlocks();
         createSmallCubeBlocks();
         createSlabs();
+        createAnimatedBlocks();
     }
 
     public void createEachSideBlocks() {
-        for (int i = 0; i < ConfigParser.EACH_SIDE_BLOCKS; i++) {
-            new EachSideTextureBlock("sides_block_" + i, Material.rock);
+        BlockInitPrefixEnum blockSettings = BlockInitPrefixEnum.SIDES;
+        for (int i = 0; i < blockSettings.getBlockAmount(); i++) {
+            new EachSideTextureBlock(blockSettings.getPrefix() + i, Material.rock);
         }
     }
 
     public void createCrossBlocks() {
-        for (int i = 0; i < ConfigParser.EACH_SIDE_BLOCKS; i++) {
-            new CrossTextureBlock("cross_block_" + i, Material.rock);
+        BlockInitPrefixEnum blockSettings = BlockInitPrefixEnum.CROSS;
+        for (int i = 0; i < blockSettings.getBlockAmount(); i++) {
+            new CrossTextureBlock(blockSettings.getPrefix() + i, Material.rock);
         }
     }
 
     public void createSmallCubeBlocks() {
-        for (int i = 0; i < ConfigParser.EACH_SIDE_BLOCKS; i++) {
-            new SmallCubeBlock("small_cube_" + i, Material.rock);
+        BlockInitPrefixEnum blockSettings = BlockInitPrefixEnum.SMALL_CUBE;
+        for (int i = 0; i < blockSettings.getBlockAmount(); i++) {
+            new SmallCubeBlock(blockSettings.getPrefix() + i, Material.rock);
         }
     }
 
     public void createSlabs() {
-        for (int i = 0; i < ConfigParser.EACH_SIDE_BLOCKS; i++) {
-            new FairySlabBlock("slab_" + i, false);
+        BlockInitPrefixEnum blockSettings = BlockInitPrefixEnum.SLAB;
+        for (int i = 0; i < blockSettings.getBlockAmount(); i++) {
+            new FairySlabBlock(blockSettings.getPrefix() + i, false);
+        }
+    }
+
+    public void createAnimatedBlocks() {
+        BlockInitPrefixEnum blockSettings = BlockInitPrefixEnum.ANIMATED;
+        for (int i = 0; i < blockSettings.getBlockAmount(); i++) {
+            new AnimatedBlock(blockSettings.getPrefix() + i, Material.rock);
         }
     }
 
     public void registerAll() {
         for (IFairyBlock block : BLOCKS) {
-            String test = block.getRegistryName();
             block.register();
         }
     }

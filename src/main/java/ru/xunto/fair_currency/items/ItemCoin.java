@@ -10,7 +10,7 @@ public class ItemCoin extends BaseItem {
     private BaseItem higherCurrency = null;
 
     public ItemCoin(String registryName) {
-        super(registryName, FairCurrencyMod.TAB);
+        super(registryName);
     }
 
     public ItemStack onItemRightClick(ItemStack item, World world, EntityPlayer player) {

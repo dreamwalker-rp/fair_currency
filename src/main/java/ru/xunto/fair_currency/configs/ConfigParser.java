@@ -6,8 +6,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class ConfigParser {
-    public static int EACH_SIDE_BLOCKS = 2;
-
     private static final String FILE_NAME = "/assets/fair_currency/config.json";
 
     EntityToLoad entityToLoad;
@@ -17,6 +15,7 @@ public class ConfigParser {
         Gson gson = new Gson();
         InputStreamReader streamReader = new InputStreamReader(in);
         entityToLoad = gson.fromJson(streamReader, EntityToLoad.class);
+        System.out.println(entityToLoad);
     }
 
     public EntityToLoad getEntityToLoad() {
