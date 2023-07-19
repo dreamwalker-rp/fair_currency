@@ -6,6 +6,7 @@ public class BlockData {
     private float hardness;
     private boolean opaqueCube;
     private boolean slowdown;
+    private int customRenderType;
 
     public boolean isPassable() {
         return passable;
@@ -45,5 +46,13 @@ public class BlockData {
 
     public void setSlowdown(boolean slowdown) {
         this.slowdown = slowdown;
+    }
+
+    public int getCustomRenderType() {
+        return customRenderType;
+    }
+
+    public void setCustomRenderType(int customRenderType) {
+        this.customRenderType = customRenderType;
     }
 }

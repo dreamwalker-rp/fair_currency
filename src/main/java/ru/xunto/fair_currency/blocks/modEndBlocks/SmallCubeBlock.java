@@ -7,7 +7,7 @@ public class SmallCubeBlock extends BaseBlock {
     public SmallCubeBlock(String registryName, Material material) {
         super(registryName, material);
         this.setBlockBounds(0.25f, 0f, 0.25f,
-                0.75f, 0.75f, 0.75f);
+                0.75f, 0.5f, 0.75f);
     }
 
 }

@@ -26,10 +26,6 @@ public class EachSideTextureBlock extends BaseBlock {
     public EachSideTextureBlock(String registryName, Material material) {
         super(registryName, material);
     }
-
-    /**
-     * Gets the block's texture. Args: side, meta
-     */
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int p_149691_1_, int p_149691_2_) {
         return getTextureBySide(p_149691_1_);

@@ -3,7 +3,11 @@ package ru.xunto.fair_currency.blocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -47,5 +51,4 @@ public class BaseBlock extends Block implements IFairyBlock {
         }
         p_149670_5_.setInWeb();
     }
-
 }
