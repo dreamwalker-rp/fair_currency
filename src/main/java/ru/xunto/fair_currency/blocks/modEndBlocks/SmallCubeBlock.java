@@ -10,4 +10,9 @@ public class SmallCubeBlock extends BaseBlock {
                 0.75f, 0.5f, 0.75f);
     }
 
+    public boolean renderAsNormalBlock()
+    {
+        return false;
+    }
+
 }

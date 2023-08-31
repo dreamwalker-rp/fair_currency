@@ -20,7 +20,7 @@ plugins {
 
 apply plugin: 'forge'
 
-version = "1.2"
+version = "1.3"
 group = "ru.xunto.fair_currency"
 archivesBaseName = "fair_currency"
 
@@ -34,6 +34,7 @@ minecraft {
 }
 
 dependencies {
+implementation 'com.google.code.gson:gson:2.10.1'
 }
 
 processResources {
