@@ -1,18 +1,29 @@
 package ru.xunto.fair_currency.configs;
 
 import net.minecraft.item.Item;
+import ru.xunto.fair_currency.configs.parsejssonstructure.BlockStructure;
 
 import java.util.HashMap;
 
 public class EntityToLoad {
     private HashMap<String, Integer> blocksAmount;
     private HashMap<String, BlockData> blocks;
-    private Item[] items;
+    private int[] items;
 
-    public EntityToLoad(HashMap<String, Integer> blocksAmount, HashMap<String, BlockData> blocks, Item[] items) {
+    public EntityToLoad(HashMap<String, Integer> blocksAmount, HashMap<String, BlockStructure> blocks, int[] items) {
         this.blocksAmount = blocksAmount;
-        this.blocks = blocks;
+
+        this.blocks = convertSettingToBlockData(blocks);
         this.items = items;
+    }
+
+    private HashMap<String, BlockData> convertSettingToBlockData(HashMap<String, BlockStructure> blocks){
+        HashMap<String, BlockData> result = new HashMap<>();
+        blocks.forEach((key, value)->{
+                result.put(key, new BlockData(value));
+        }
+        );
+        return result;
     }
 
     public HashMap<String, Integer> getBlocksAmount() {
@@ -38,11 +49,11 @@ public class EntityToLoad {
         this.blocks = blocks;
     }
 
-    public Item[] getItems() {
+    public int[] getItems() {
         return items;
     }
 
-    public void setItems(Item[] items) {
+    public void setItems(int[] items) {
         this.items = items;
     }
 }

@@ -1,5 +1,8 @@
 package ru.xunto.fair_currency.configs;
 
+import ru.xunto.fair_currency.configs.parsejssonstructure.BlockStructure;
+import ru.xunto.fair_currency.configs.parsejssonstructure.SettingStructure;
+
 public class BlockData {
     private boolean passable;
     private boolean light_source;
@@ -7,6 +10,14 @@ public class BlockData {
     private boolean opaqueCube;
     private boolean slowdown;
     private int customRenderType;
+
+    public BlockData(BlockStructure settings) {
+        this.passable = settings.isPassable();
+        this.light_source = settings.isLightSource();
+        this.hardness = settings.getHardness();
+        this.opaqueCube = settings.isOpaqueCube();
+        this.slowdown = settings.isSlowdown();
+    }
 
     public boolean isPassable() {
         return passable;

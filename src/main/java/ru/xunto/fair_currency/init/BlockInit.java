@@ -7,6 +7,7 @@ import ru.xunto.fair_currency.blocks.modEndBlocks.*;
 import ru.xunto.fair_currency.configs.BlockData;
 import ru.xunto.fair_currency.configs.ConfigParser;
 import ru.xunto.fair_currency.configs.EntityToLoad;
+import ru.xunto.fair_currency.configs.parsejssonstructure.SettingStructure;
 
 import java.util.ArrayList;
 import java.util.HashMap;

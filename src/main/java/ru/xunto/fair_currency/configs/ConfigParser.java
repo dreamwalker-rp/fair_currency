@@ -1,7 +1,11 @@
 package ru.xunto.fair_currency.configs;
 
-import com.google.gson.Gson;
+import com.google.common.base.Charsets;
+import com.google.common.io.CharStreams;
+import org.codehaus.jackson.map.ObjectMapper;
+import ru.xunto.fair_currency.configs.parsejssonstructure.SettingStructure;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
@@ -12,10 +16,21 @@ public class ConfigParser {
 
     public void LoadConfig() {
         InputStream in = getClass().getResourceAsStream(FILE_NAME);
-        Gson gson = new Gson();
-        InputStreamReader streamReader = new InputStreamReader(in);
-        entityToLoad = gson.fromJson(streamReader, EntityToLoad.class);
-        System.out.println(entityToLoad);
+        ObjectMapper objectMapper = new ObjectMapper();
+        String result = null;
+        try {
+            result = CharStreams.toString(new InputStreamReader(
+                    in, Charsets.UTF_8));
+            SettingStructure settingStructure = objectMapper.readValue(result, SettingStructure.class);
+            entityToLoad = new EntityToLoad(
+                    settingStructure.getBlocksAmount(),
+                    settingStructure.getBlocks(),
+                    settingStructure.getItems()
+            );
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+
+        }
     }
 
     public EntityToLoad getEntityToLoad() {
